@@ -1,0 +1,22 @@
+# Quickstart: runs entirely locally with the fake provider (nothing leaves your machine).
+timezone: UTC
+sender:
+  email: you@yourdomain.com
+  name: "Your Name"
+  reply_to: you@yourdomain.com
+provider:
+  profile: demo
+profiles:
+  demo:
+    type: fake
+    outbox: .eas/fake_outbox.jsonl
+input:
+  recipients_file: ./recipients.csv
+  template_file: ./template.html
+compliance:
+  type: marketing
+  footer_address: "Example Co, 1 Example Street, Example City, Country"
+  unsubscribe:
+    url_template: "https://example.com/unsubscribe?t={token}"
+campaign:
+  name: quickstart
